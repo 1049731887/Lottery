@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖</title>
+    <style>
+        * {
+            -moz-user-select: none;
+            -o-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        h1 {
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        body {
+            background: url(res/background.png) center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: #fff;
+            font-weight: initial;
+        }
+
+        @font-face {
+            font-family: 'font';
+            src: url('font.ttf');
+        }
+
+        .people {
+            text-align: center;
+            color: #EED195;
+            font-family: font;
+            font-size: 60px;
+            font-weight: initial;
+            margin: 60px;
+        }
+
+        h1 {
+            margin: 100px auto;
+            text-align: center;
+            color: #EED195;
+            font-family: font;
+            font-size: 100px;
+            font-weight: initial;
+            margin-bottom: 40px;
+            margin-top: 80px;
+        }
+    </style>
+    <script>
+
+        jsqid = setInterval(function () {
+            var myDate = new Date();
+            var second = myDate.getSeconds();
+            pnum1_wei = Math.floor(Math.random() * name01.length);
+            pnum2_wei = Math.floor(Math.random() * name02.length);
+            pnum3_wei = Math.floor(Math.random() * name03.length);
+            update();
+        }, 150);
+
+        function update() {     //774  615  382
+            pnum1_wei = Math.floor(Math.random() * name01.length);
+            pnum2_wei = Math.floor(Math.random() * name02.length);
+            pnum3_wei = Math.floor(Math.random() * name03.length);
+            document.getElementById("p1").innerHTML = name01[pnum1_wei];
+            document.getElementById("p2").innerHTML = name02[pnum2_wei];
+            document.getElementById("p3").innerHTML = name03[pnum3_wei];
+        }
+    </script>
+</head>
+
+<body style="background-color: rgba(8, 16, 29, 0.918);">
+
+    <script>
+        document.body.style.overflow = 'hidden';
+
+        name01 = ["10101张三", "10102李四", "10103王五", "10101张三", "10102李四", "11050最后一个人"];
+        name02 = ["20101老三", "20102老四", "20103老五", "20101老三", "20102老四", "21050最后一个人"];
+        name03 = ["30101牢大", "30102老二", "30103老三", "30101牢大", "30102老二", "31050最后一个人"];
+
+    </script>
+
+</body>
+
+<body>
+    <h1 onclick="myFunction()">
+        抽奖环节
+    </h1>
+    <div>
+        <p class="people" id="p1"></p>
+        <p class="people" id="p2"></p>
+        <p class="people" id="p3"></p>
+
+    </div>
+
+    <script>
+        function myFunction() {
+            // flag = true;
+            clearInterval(jsqid);
+            //alert("gog");
+
+            pnum1 = Math.floor(Math.random() * name01.length);
+            pnum2 = Math.floor(Math.random() * name02.length);
+            pnum3 = Math.floor(Math.random() * name03.length);
+            document.getElementById("p1").innerHTML = name01[pnum1];
+            document.getElementById("p2").innerHTML = name02[pnum2];
+            document.getElementById("p3").innerHTML = name03[pnum3];
+        }
+    </script>
+</body>
+
+</html>
